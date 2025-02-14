@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Registration</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .container {
+            max-width: 600px;
+            margin-top: 50px;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        .form-label {
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h3 class="text-center mb-4">Create Patient Registration (P-9700)</h3>
+    <form id="patientForm">
+        <div class="mb-3">
+            <label class="form-label">Patient Name</label>
+            <input type="text" class="form-control" id="patientName" value="Alice Brown" required>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Date of Birth</label>
+            <input type="date" class="form-control" id="dob" value="2002-05-24" required>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Email Address</label>
+            <input type="email" class="form-control" id="email" value="alicebrown@gmail.com" required>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Insurance Policy Number</label>
+            <input type="text" class="form-control" id="insurancePolicy" value="3421678">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Address</label>
+            <input type="text" class="form-control" id="address" value="123 Main St, Anytown, USA">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Contact Number</label>
+            <input type="tel" class="form-control" id="contactNumber" value="342516892" required>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Gender</label>
+            <select class="form-select" id="gender">
+                <option selected>Female</option>
+                <option>Male</option>
+                <option>Other</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Primary Care Physician</label>
+            <input type="text" class="form-control" id="physician" value="Jane Smith">
+        </div>
+        <div class="d-flex justify-content-between">
+            <button type="button" class="btn btn-secondary">Cancel</button>
+            <button type="submit" class="btn btn-primary">Create</button>
+        </div>
+    </form>
+</div>
+
+<script>
+    document.getElementById("patientForm").addEventListener("submit", function(event) {
+        event.preventDefault(); // Prevent page refresh
+
+        const patientData = {
+            name: document.getElementById("patientName").value,
+            dob: document.getElementById("dob").value,
+            email: document.getElementById("email").value,
+            insurancePolicy: document.getElementById("insurancePolicy").value,
+            address: document.getElementById("address").value,
+            contactNumber: document.getElementById("contactNumber").value,
+            gender: document.getElementById("gender").value,
+            physician: document.getElementById("physician").value
+        };
+
+        console.log("Patient Data Submitted:", patientData);
+        alert("Patient Registration Submitted Successfully!");
+
+        // You can replace the console log with an API call to save the data
+    });
+</script>
+
+</body>
+</html>
